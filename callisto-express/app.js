@@ -6,7 +6,7 @@ import { options } from "./swagger/config.js";
 import { PingRouter } from "./apis/pings/ping.router.js";
 
 const app = express();
-const port = 3000;
+
 
 app.use(express.json());
 
@@ -27,6 +27,13 @@ app.use(
 const pingRouter = new PingRouter().getRouter;
 app.use("/", pingRouter);
 
-app.listen(port, () => {
-  console.log(`express_app listening on port ${port}`);
-});
+
+
+
+
+
+
+
+
+
+export default app;
