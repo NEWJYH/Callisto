@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "migrate" : "yarn knex migrate:latest --knexfile db/knexfile.js",
-    "start":"node main",
+    "start":"node ./src/server.js",
     "dev": "nodemon main",
     "test": "jest --watch",
     "cov": "jest --coverage"
