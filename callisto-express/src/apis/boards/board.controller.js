@@ -6,6 +6,4 @@ export class BoardController {
     this.boardService = boardService
   }
 
-
-  
 }

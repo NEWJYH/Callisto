@@ -1,11 +1,15 @@
 {
   "name": "callisto-express",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "./src/server.js",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "migrate" : "yarn knex migrate:latest --knexfile db/knexfile.js",
+    "make-seed": "yarn knex seed:make dev --knexfile db/knexfile.js",
+    "migrate": "yarn knex migrate:latest --knexfile db/knexfile.js",
+    "seed": "yarn knex seed:run --knexfile db/knexfile.js",
+    "down": "yarn knex migrate:down --knexfile ./db/knexfile.js",
+    "start":"node main",
     "dev": "nodemon main",
     "test": "jest --watch",
     "cov": "jest --coverage"
@@ -15,13 +19,14 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "knex": "^2.4.2",
-    "nodemon": "^2.0.22",
+    "objection": "^3.0.1",
     "pg": "^8.10.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^4.6.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
+    "nodemon": "^2.0.22",
     "jest": "^29.5.0",
     "supertest": "^6.3.3"
   },

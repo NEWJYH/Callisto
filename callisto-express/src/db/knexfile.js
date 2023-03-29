@@ -1,3 +1,4 @@
+import { knexSnakeCaseMappers } from "objection";
 
 const knexfile = {
   development: {
@@ -6,7 +7,7 @@ const knexfile = {
       host: "127.0.0.1",
       port: "5432",
       user: "UserName",
-      password:"Password",
+      password: "Password",
       database: "postgres",
     },
     pool: {
@@ -15,8 +16,9 @@ const knexfile = {
     },
     migrations: {
       tableName: "migrations",
-      directory: __dirname + '/apis/**/*entity.*'
     },
+    seeds: './seeds',
+    ...knexSnakeCaseMappers,
   },
 };
 

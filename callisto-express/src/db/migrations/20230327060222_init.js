@@ -1,7 +1,7 @@
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
- */
+ */ // 데이터베이스 생성
 export async function up(knex) {
   await knex.schema.createTable("person", (table) => {
     table.increments("id");
@@ -13,7 +13,7 @@ export async function up(knex) {
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
- */
+ */ // 데이터베이스 롤백
 export async function down(knex) {
-  await knex.schema.dropTable('person')
+  await knex.schema.dropTableIfExists('person')
 }
