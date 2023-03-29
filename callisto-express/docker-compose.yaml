@@ -7,9 +7,9 @@ services:
       dockerfile: Dockerfile
 
     volumes:
-      - ./apis:/myfolder/apis
-      - ./app.js:/myfolder/app.js
-      - ./server.js:/myfolder/server.js
+      - ./src/apis:/myfolder/src/apis
+      - ./src/app.js:/myfolder/src/app.js
+      - ./src/server.js:/myfolder/src/server.js
     ports:
       - 3000:3000
 
