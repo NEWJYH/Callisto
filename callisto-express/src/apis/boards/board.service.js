@@ -1,6 +1,0 @@
-export class BoardService {
-
-  constructor(){}
-
-  
-}
