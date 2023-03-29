@@ -12,4 +12,9 @@ public class TestController {
     public String testController() {
         return "test";
     }
+
+    @GetMapping("/index")
+    public int indexController() {
+        return 1;
+    }
 }
