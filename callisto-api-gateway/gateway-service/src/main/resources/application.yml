@@ -20,7 +20,8 @@ spring:
           predicates:
             - Path=/go/**
           filters:
-            - RewritePath=/go/(?<path>.*), /$\{path}
+#            - RewritePath=/go/(?<path>.*), /$\{path}
+            - CustomFilter
 
 
 management:
