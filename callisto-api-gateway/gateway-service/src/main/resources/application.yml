@@ -21,7 +21,18 @@ spring:
             - Path=/go/**
           filters:
 #            - RewritePath=/go/(?<path>.*), /$\{path}
-            - CustomFilter
+            - name: CustomFilter
+            - name: LoggingFilter
+              args:
+                baseMessage: Hi, there
+                preLogger: true
+                postLogger: true
+      default-filters:
+        - name: GlobalFilter
+          args:
+            baseMessage: Spring Cloud Gateway Global Filter
+            preLogger: true
+            postLogger: true
 
 
 management:
