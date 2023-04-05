@@ -16,11 +16,11 @@ spring:
           lower-case-service-id: true
       routes:
         - id: admin-server
-          uri: http://localhost:3000
+          uri: lb://callisto-admin-server
           predicates:
             - Path=/go/**
           filters:
-#            - RewritePath=/go/(?<path>.*), /$\{path}
+            - RewritePath=/go/(?<path>.*), /$\{path}
             - name: CustomFilter
             - name: LoggingFilter
               args:
