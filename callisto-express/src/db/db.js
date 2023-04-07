@@ -13,3 +13,12 @@ const db = knex(knexfile.development);
 export default db;
 
 // yarn knex migrate:make init --migrations-directory db/migrations
+
+/************************************************************
+ * 파 일 명 : db.js
+ * 설    명 : 데이터베이스 연결을 위한 knex 인스턴스 생성파일
+ * 
+ * 수정일       수정자          Version      Description
+ * ----------  --------------  ---------   -----------
+ * 2023.03.31  정영훈           1.0         최초 생성
+ * **********************************************************/
