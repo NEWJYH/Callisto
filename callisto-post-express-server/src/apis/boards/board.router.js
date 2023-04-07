@@ -3,7 +3,12 @@ import  express  from 'express';
 import { BoardController } from './board.controller.js';
 import { BoardService } from './board.service.js';
 
+// @ts-check
+/**
+ * 
+ */
 export class BoardRouter {
+  
   constructor() {
     this.router = express.Router();
     this.boardService = new BoardService();
