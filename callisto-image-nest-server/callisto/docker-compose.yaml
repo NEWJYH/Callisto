@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  my-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/myfolder/src
+    ports:
+      - 8080:8080
+
+  my-database:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: 'UserName'
+      POSTGRES_PASSWORD: 'Password'
+    ports:
+      - 5432:5432
