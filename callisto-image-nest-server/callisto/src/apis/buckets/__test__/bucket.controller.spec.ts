@@ -104,7 +104,7 @@ describe('BucketController', () => {
   });
   // createBucket
   describe('createBucket', () => {
-    it('등록된 버킷이름이라면 confilictException', async () => {
+    it('등록된 버킷이름이라면 conflictException', async () => {
       const bucketName = '학교이미지';
       const bucketRepositorySpyFindOne = jest.spyOn(
         bucketRepository,

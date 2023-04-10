@@ -2,11 +2,15 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { BucketModule } from './apis/buckets/bucket.module';
+import { JobModule } from './apis/jobs/job.module';
+import { UserModule } from './apis/users/user.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 @Module({
   imports: [
+    JobModule,
+    // UserModule,
     BucketModule,
     // .env file Setting
     ConfigModule.forRoot({
