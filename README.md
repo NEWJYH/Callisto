@@ -1,6 +1,7 @@
 # MSA Project Callisto
 
 ## 📓 프로젝트 소개
+![callisto-architecture](https://user-images.githubusercontent.com/86289926/229365525-06631548-a957-4211-92fe-af3cd2e23e00.png)
 
 ## 🗓️ 개발 기간
 
