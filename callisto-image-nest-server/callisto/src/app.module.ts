@@ -1,15 +1,17 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { BucketModule } from './apis/buckets/bucket.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 @Module({
   imports: [
+    BucketModule,
     // .env file Setting
     ConfigModule.forRoot({
       isGlobal: true, //
-      envFilePath: process.env.NODE_ENV == 'dev' ? '.env.dev' : '.env.test',
+      envFilePath: process.env.NODE_ENV == 'dev' ? '.env.dev' : '.env.prod',
     }),
     // TypeORM db Setting
     TypeOrmModule.forRoot({
