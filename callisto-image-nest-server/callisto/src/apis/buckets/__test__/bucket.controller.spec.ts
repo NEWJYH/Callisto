@@ -81,7 +81,7 @@ type MockRepository<T = any> = Partial<Record<keyof Repository<T>, jest.Mock>>;
 
 describe('BucketController', () => {
   let bucketController: BucketController;
-  let bucketService: BucketService;
+
   let bucketRepository: MockRepository<Bucket>;
 
   beforeEach(async () => {
@@ -97,7 +97,7 @@ describe('BucketController', () => {
     }).compile();
 
     bucketController = bucketModule.get<BucketController>(BucketController);
-    bucketService = bucketModule.get<BucketService>(BucketService);
+
     bucketRepository = bucketModule.get<MockRepository<Bucket>>(
       getRepositoryToken(Bucket),
     );
