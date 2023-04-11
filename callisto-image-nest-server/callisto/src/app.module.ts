@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './apis/auth/auth.module';
 import { BucketModule } from './apis/buckets/bucket.module';
 import { JobModule } from './apis/jobs/job.module';
+import { ProfileModule } from './apis/profiles/profile.module';
 import { UserClassModule } from './apis/userClass/userClass.module';
 import { UserModule } from './apis/users/user.module';
 import { AppController } from './app.controller';
@@ -10,9 +12,11 @@ import { AppService } from './app.service';
 
 @Module({
   imports: [
+    AuthModule,
+    UserModule,
+    ProfileModule,
     UserClassModule,
     JobModule,
-    // UserModule,
     BucketModule,
     // .env file Setting
     ConfigModule.forRoot({

@@ -15,7 +15,7 @@ export class Bucket extends BaseEntity {
   @PrimaryGeneratedColumn({ type: 'int' })
   bucket_id: number;
 
-  @ApiProperty({ description: 'bucket_name' })
+  @ApiProperty({ description: 'bucket_name', required: true })
   @Column({ type: 'varchar', length: 20, nullable: false })
   bucket_name: string;
 
