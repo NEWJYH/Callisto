@@ -7,7 +7,7 @@ import { User } from './entities/user.entity';
 
 @Injectable()
 export class UserService {
-  //
+  //요
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>, //
@@ -66,5 +66,12 @@ export class UserService {
       where: { email },
       relations: ['profile'],
     });
+  }
+
+  async updateVerified({ email }) {
+    //
+    const user = await this.userRepository.findOne({ where: { email } });
+    user.verified = true;
+    return await this.userRepository.save(user);
   }
 }

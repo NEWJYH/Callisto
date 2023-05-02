@@ -1,9 +1,18 @@
-import { Body, ConflictException, Controller, Post } from '@nestjs/common';
+import {
+  Body,
+  ConflictException,
+  Controller,
+  Post,
+  UseGuards,
+} from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserInput } from './dto/createUser.input';
 import * as bcrypt from 'bcrypt';
 import { User } from './entities/user.entity';
 import { UserClassService } from '../userClass/userClass.service';
+import { JwtAuthGuard } from 'src/commons/auth/jwtAuthGuard';
+import { JwtPayload } from 'src/commons/auth/jwt-access.strategy';
+import { CurrentUser } from 'src/commons/auth/user.params';
 
 @Controller('/users')
 export class UserController {
@@ -42,5 +51,14 @@ export class UserController {
 
     // 이메일 검증 메시지 발송
     return user;
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Post('/verified')
+  async updateVerified(@CurrentUser() currentUser: JwtPayload) {
+    const { email } = currentUser;
+    const user = await this.userService.updateVerified({ email });
+    // TODO 예외 처리
+    return user.verified;
   }
 }

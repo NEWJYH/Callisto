@@ -23,7 +23,7 @@ export class AuthService {
     console.log('AccessToken발행');
     return this.jwtService.sign(
       { email: email, sub: profile_id },
-      { secret: process.env.JWT_SECRET, expiresIn: '10s' },
+      { secret: process.env.JWT_SECRET, expiresIn: '1h' },
     );
   }
 }
