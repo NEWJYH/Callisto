@@ -13,7 +13,9 @@ import { UserClassService } from '../userClass/userClass.service';
 import { JwtAuthGuard } from 'src/commons/auth/jwtAuthGuard';
 import { JwtPayload } from 'src/commons/auth/jwt-access.strategy';
 import { CurrentUser } from 'src/commons/auth/user.params';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('user API')
 @Controller('/users')
 export class UserController {
   constructor(

@@ -4,7 +4,9 @@ import { JwtAuthGuard } from 'src/commons/auth/jwtAuthGuard';
 import { CurrentUser } from 'src/commons/auth/user.params';
 import { UpdateProfileInput } from './dto/updateProfile.input';
 import { ProfileService } from './profile.service';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('profile API')
 @Controller('/profiles')
 export class ProfileController {
   constructor(

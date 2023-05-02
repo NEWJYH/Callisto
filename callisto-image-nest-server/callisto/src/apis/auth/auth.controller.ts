@@ -13,7 +13,9 @@ import * as bcrypt from 'bcrypt';
 import { Response } from 'express';
 import { CurrentUser } from '../../commons/auth/user.params';
 import { JwtAuthRefreshGuard } from 'src/commons/auth/jwtAuthGuard';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('auth API')
 @Controller('/auth')
 export class AuthController {
   constructor(

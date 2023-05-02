@@ -9,9 +9,13 @@ import { UserClassModule } from './apis/userClass/userClass.module';
 import { UserModule } from './apis/users/user.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { FileModule } from './apis/files/file.module';
+import { ImageModule } from './apis/images/image.module';
 
 @Module({
   imports: [
+    FileModule,
+    ImageModule,
     AuthModule,
     UserModule,
     ProfileModule,
